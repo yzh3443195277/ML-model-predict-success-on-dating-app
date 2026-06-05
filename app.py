@@ -271,11 +271,11 @@ elif section == "Part 4: Machine Learning Evaluation":
     st.markdown("<br>", unsafe_allow_html=True)
     st.subheader("🥇 Overview of Model Performance Metrics")
     # 【替换成这段真实数据】
-    eval_metrics_df = pd.DataFrame({
+eval_metrics_df = pd.DataFrame({
         "Model Algorithm": ['Logistic Regression', 'Random Forest', 'XGBoost', 'LightGBM', 'AutoML (Best Model)'],
         "Accuracy": [0.1043, 0.1028, 0.1035, 0.1040, 0.1053],
         "Precision": [0.1012, 0.1022, 0.1015, 0.1030, 0.1045],
         "Recall": [0.1043, 0.1028, 0.1035, 0.1040, 0.1053],
-        "F1-Score": [0.0950, 0.1015, 0.1020, 0.1035, 0.1053]
+        "Weighted F1-Score": [0.0950, 0.1015, 0.1020, 0.1035, 0.1053]  # <--- 仅仅是把这里的 "F1-Score" 改成了 "Weighted F1-Score"
     })
     st.dataframe(eval_metrics_df.style.highlight_max(subset=["Accuracy", "Precision", "Recall", "Weighted F1-Score"], color='#ffcccc'), use_container_width=True)
