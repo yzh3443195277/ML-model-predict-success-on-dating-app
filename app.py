@@ -270,11 +270,12 @@ elif section == "Part 4: Machine Learning Evaluation":
     if img_f1_comparison: st.image(img_f1_comparison, caption="Comprehensive Comparison of Weighted F1-Scores Across Models", use_container_width=True)
     st.markdown("<br>", unsafe_allow_html=True)
     st.subheader("🥇 Overview of Model Performance Metrics")
+    # 【替换成这段真实数据】
     eval_metrics_df = pd.DataFrame({
         "Model Algorithm": ['Logistic Regression', 'Random Forest', 'XGBoost', 'LightGBM', 'AutoML (Best Model)'],
-        "Accuracy": [0.6612, 0.7745, 0.8129, 0.8490, 0.9184],
-        "Precision": [0.6405, 0.7912, 0.8301, 0.8611, 0.9025],
-        "Recall": [0.6612, 0.7688, 0.8045, 0.8432, 0.9317],
-        "Weighted F1-Score": [0.6502, 0.7801, 0.8214, 0.8523, 0.9126]
+        "Accuracy": [0.1043, 0.1028, 0.1035, 0.1040, 0.1053],
+        "Precision": [0.1012, 0.1022, 0.1015, 0.1030, 0.1045],
+        "Recall": [0.1043, 0.1028, 0.1035, 0.1040, 0.1053],
+        "F1-Score": [0.0950, 0.1015, 0.1020, 0.1035, 0.1053]
     })
     st.dataframe(eval_metrics_df.style.highlight_max(subset=["Accuracy", "Precision", "Recall", "Weighted F1-Score"], color='#ffcccc'), use_container_width=True)
